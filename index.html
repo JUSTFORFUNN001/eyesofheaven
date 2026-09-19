@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work In Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0c10;
+    --bg-elev: #14161c;
+    --bg-elev-2: #1b1e26;
+    --border: #262a33;
+    --text: #e9e7e0;
+    --text-muted: #9a9ea8;
+    --text-faint: #666b78;
+    --accent: #c79a3f;
+    --accent-dim: #8a6f2f;
+    --accent-text: #1a1408;
+    --radius: 8px;
+    --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f4ee;
+      --bg-elev: #ffffff;
+      --bg-elev-2: #eeece4;
+      --border: #ded9cc;
+      --text: #1c1b17;
+      --text-muted: #5c5a52;
+      --text-faint: #8b8878;
+      --accent: #a3771f;
+      --accent-dim: #8a6518;
+      --accent-text: #fff8ea;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    min-height: 100%;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* ---------- shell ---------- */
+  .topbar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    background: rgba(11,12,16,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .topbar { background: rgba(246,244,238,0.88); }
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .brand span { color: var(--accent); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    margin: 0 -20px 0;
+    padding: 56px 20px 40px;
+    background:
+      radial-gradient(120% 140% at 15% -10%, rgba(199,154,63,0.16), transparent 55%),
+      radial-gradient(120% 140% at 90% 0%, rgba(199,154,63,0.08), transparent 50%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(115deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 64px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    align-items: flex-end;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .cover {
+    flex: 0 0 auto;
+    width: 150px;
+    aspect-ratio: 2 / 3;
+    border-radius: 6px;
+    border: 1px solid rgba(199,154,63,0.35);
+    background:
+      linear-gradient(160deg, #23262f 0%, #14161c 60%, #0b0c10 100%);
+    box-shadow: 0 18px 40px -18px rgba(0,0,0,0.8), 0 0 0 1px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(199,154,63,0.25);
+    border-radius: 3px;
+  }
+  .cover-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 40px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  .hero-copy { flex: 1 1 320px; min-width: 260px; padding-bottom: 4px; }
+  .kicker {
+    font-size: 13px;
+    color: var(--text-faint);
+    margin: 0 0 10px;
+  }
+  .title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.08;
+    margin: 0 0 10px;
+  }
+  .byline { color: var(--text-muted); font-size: 15px; margin: 0 0 22px; }
+  .byline .accent { color: var(--accent); }
+
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-text); }
+  .btn-primary:hover { background: var(--accent-dim); }
+  .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .synopsis {
+    max-width: 900px;
+    margin: 28px auto 0;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 620px;
+  }
+
+  /* ---------- chapter list ---------- */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 44px 0 14px;
+    gap: 12px;
+  }
+  .section-head h2 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .section-head .count { color: var(--text-faint); font-size: 13px; }
+
+  .chapter-list { border-top: 1px solid var(--border); }
+  .chapter-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-row:hover { background: var(--bg-elev); }
+  .chapter-num {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--accent);
+    width: 34px;
+    flex: 0 0 auto;
+    text-align: right;
+  }
+  .chapter-meta { flex: 1 1 auto; min-width: 0; }
+  .chapter-title {
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chapter-vol { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+  .chapter-arrow { color: var(--text-faint); flex: 0 0 auto; }
+
+  .empty-state {
+    padding: 40px 4px;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ---------- reader ---------- */
+  .reader-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+  }
+  .reader-bar select {
+    background: var(--bg-elev);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
+    max-width: 260px;
+  }
+  .nav-btn {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .nav-btn:disabled { opacity: 0.35; cursor: default; }
+  .nav-btn:not(:disabled):hover { border-color: var(--accent); color: var(--accent); }
+  .spacer { flex: 1; }
+
+  .chapter-head {
+    text-align: center;
+    padding: 20px 0 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .chapter-head .vol { font-size: 12px; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 8px; }
+  .chapter-head h1 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+
+  .prose {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.85;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .prose p { margin: 0 0 1.3em; }
+
+  .reader-bar.bottom { border-top: 1px solid var(--border); margin-top: 40px; }
+
+  /* ---------- admin ---------- */
+  .fab {
+    position: fixed;
+    right: 22px;
+    bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+    z-index: 30;
+    background: var(--accent);
+    color: var(--accent-text);
+    border: none;
+    border-radius: 999px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 12px 28px -10px rgba(0,0,0,0.6);
+  }
+  .fab:hover { background: var(--accent-dim); }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px;
+    overflow-y: auto;
+    z-index: 40;
+  }
+  .modal {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 560px;
+    padding: 24px;
+  }
+  .modal h3 { font-family: var(--serif); font-size: 20px; margin: 0 0 4px; }
+  .modal p.hint { color: var(--text-faint); font-size: 13px; margin: 0 0 20px; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+  .field input, .field textarea {
+    width: 100%;
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: var(--sans);
+    font-size: 14px;
+  }
+  .field textarea { min-height: 220px; resize: vertical; font-family: var(--serif); font-size: 16px; line-height: 1.6; }
+  .row2 { display: flex; gap: 12px; }
+  .row2 .field { flex: 1; }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+  .modal-status { font-size: 13px; color: var(--text-faint); margin-top: 10px; min-height: 18px; }
+
+  footer.credit {
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 12px;
+    padding: 30px 20px 50px;
+  }
+
+  ::selection { background: rgba(199,154,63,0.35); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="#/" class="brand">Work In Progress<span>.</span></a>
+  <div id="ownerBadge" style="font-size:12px;color:var(--text-faint);"></div>
+</div>
+
+<main id="app"></main>
+
+<footer class="credit">Private reading copy &middot; shared by link only</footer>
+
+<button class="fab" id="addChapterBtn" style="display:none;">+ Add Chapter</button>
+
+<div class="modal-overlay" id="modalOverlay" style="display:none;">
+  <div class="modal">
+    <h3>Add a chapter</h3>
+    <p class="hint">Paste the chapter text below. Leave a blank line between paragraphs. Saving downloads an updated index.html \u2014 upload that to your host to replace the old one.</p>
+    <div class="row2">
+      <div class="field">
+        <label>Chapter number</label>
+        <input type="number" id="fNumber" min="1">
+      </div>
+      <div class="field">
+        <label>Volume label</label>
+        <input type="text" id="fVolume" value="Volume 1">
+      </div>
+    </div>
+    <div class="field">
+      <label>Title</label>
+      <input type="text" id="fTitle" placeholder="e.g. The Village">
+    </div>
+    <div class="field">
+      <label>Chapter text</label>
+      <textarea id="fContent" placeholder="Paste chapter text here..."></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="cancelModal">Cancel</button>
+      <button class="btn btn-primary" id="saveChapter">Save chapter</button>
+    </div>
+    <div class="modal-status" id="modalStatus"></div>
+  </div>
+</div>
+
+<script type="application/json" id="chapters-data">
+[
+  {
+    "id": 1,
+    "number": 1,
+    "title": "Chapter 1",
+    "volume": "Volume 1",
+    "content": "In the serene embrace of towering mountains, under a clear blue sky, and amidst snow whiter than the pearly gates, foxes, deer, and rabbits roam freely. The Village, wrapped in a quaint charm reminiscent of a tribal enclave, still clings to wood and a hint of iron. A scruffy-haired child, seemingly untouched by cleansing waters, tends to a lamb alongside his sister. But then, a chilling voice pierces the air: \"It destroyed the gate again.\" The sister gazes at her brother, pleading, \"Please save us from this nightmare, big brother.\"\n\nThe Past\u2014a single wooden house emits wisps of smoke; this time is reminicent of the time before the Village. Two inhabitants reside within, a child of no more than 8 and a well-built man in his 30s. The child, silent as the minutes after a town bell rings, remains unnamed\u2014silence is its only identity. The man, hulking yet exuding a fatherly aura, is known as Father. They share a simple dinner of lamb stew, rice, and water.\n\nThe Village, the brother and two others mend the broken fence, returning to the lamb's care. However, with each passing day, a lamb vanishes, its bones mysteriously returning. The elusive figure of the monster, or demon, remains unseen.\n\nThe Past: Father, with a voice draped in the resonance of ancient stories, shares with :: the haunting tale of a princess who, with unyielding courage, chose to embrace the consuming flames, a sacrificial shield against the lurking menace. This spectral figure, akin to a manifestation of nature's malevolence, materialised with elongated limbs that seemed to reach from the shadows. Its hollow eyes held an ethereal chill, and an eerie aura clung to it, casting an ominous presence throughout the princess's courageous narrative.\n\nThe Village. Again, the lamb has been taken\u2014nothing weird\u2014but again, the fence has been broken, and again, the sister asks her brother, \"Save us from this nightmare.\" So the boy does everything and comes back. Normal day.\n\nThe Past: Father is dead. We only see blood\u2014no stab wound, no bite wound, just blood. Two men, appearing not only deprived of sustenance but also drained of life, stand with audible silence enveloping them. Their movements and intentions emanate a noise of despair as they hover, one of them holding :: by her wrist.\n\nThe Village. Again, the lamb, the fence, the sister, and the boy.\n\nThe Past. Another house; it's not the same one; it's like a wooden barn with people hanging from the roof with buckets. We see from :: perspective the same thing done to her, and the deprived men are shouting at them all. If you do what we say, you'll survive. One of the people tells them, \"I'm hungry. I need to eat.\" Having been here for weeks, they just cut him down. A couple days come by, then a couple weeks. He never comes back. Next to :: is a man in his upper 20s with scruffy, dark red hair and lashes across his back. :: shatters the deafening silence, fracturing the stillness that clings to her existence, her dead noise, and asks them, \"How can you do this to us and say we will survive what you have taken us for? Ignorant. Ignorant of the evil shit humans can do\u2026 what you do.\" They cut her down and took her to a different room, shouting, \"Never question us.\" On her right are a bunch of steel weapons, and behind her is one of the men with a whip. She's exhausted; it's probably been days.\n\nThe Village. This time there were no more sheep to take, so the monster took its first human. Again, the sister says to the brother, \"Will you save us from this nightmare?\" It's different this time. He looks at the blood on the once-pearl white snow.\n\nSTRUGGLE. STRUggle. Struggle. struggle. still. PAIN. PAIN. PAin. Pain. pain. silence.\n\nThe Past. Another opportunity, or, in an act of desperation, :: grabs a tool on her right and stabs one of the men. She quickly releases everyone who's hanging by the roof with buckets below them. Last, the guy with scruffy red hair grabs the weapon and quickly stabs the other guy, who only just came back from a hunt, killing him too. They all celebrate as they are released from their suffering, except the girl and the guy with scruffy red hair. They all decide to travel as a group. With the girl growing up to about 15, they come across a river, and on the other side is a hut with an old guy; he's withered decrepit, almost dusty, but has no struggle in a sense; he's witch like, an ancient, preparing a meal in a pot. They settle in a cave nearby. The winters go by as they hunt animals for food and fight off dangerous beasts, such as bears, wolves, and bigger bears.\n\n:: was always told stories by people \"of age,\" as she had known them, so she thought that now that she was the leader of their people after so long that she would tell the stories, she would no longer be controlled or forced to listen to other people's stories. But who would she tell\u2014someone she's known? No, it had to be someone who she hasn't known, or rather, who hasn't known her. She decides that she wants to tell the ancient a story, so she runs to the banks of the river, repeatedly shouting, \"I want to tell you a story. I want to tell you a story.\" A couple of weeks go by. Something changed the bigger bear, as she knew it came to hybernate, but why here? Maybe he wanted to tell his own story. The man with scruffy red hair fears the bigger bear, but why though? He has fought way bigger bears, :: thinks to herself, and so the cave is no longer suitable to live in. They see the ancient again. They decide to go there, and she tells everyone to wait behind her while she speaks to the ancient. She tells him, \"I want to tell you a story in exchange for you protecting my family.\" The ancient says, \"Oh, your that girl who was shouting and telling me you want to tell me a story. Well, let's hear it then.\" The ancient takes her on a walk and asks her what type of story she wants to tell him. :: replies, \u201cI don't know.\u201d The ancient says, \u201cTell me what stories you have.\u201d She says, \"I have one about myself, one about a princess, and one about a red wolf.\" The ancient says, \u201dLet's hear the one about yourself.\u201d So they walk past, and the people didn't listen to her command to stay behind while she talked to the ancient they had settled in. They are sitting around a campfire, laughing, and the man with scruffy red hair is keeping his eye on her. She tells the story about herself from the time with Father in the single house. To the time with the two deprived men and hanging from a roof. She breaks down, crying. The ancient tells her, \"You are broken.\" She replies in a loud voice, saying she's not broken. She is the sole individual in the family who has remained resilient despite the adversity they have faced. She has been touched inappropriately, but she is not broken. Despite enduring the confinement of chains and the infliction of whip strikes, she remains resilient and unyielding; she is not broken. So the ancient, eager to hear more, says, \u201dLet's hear the story of the red wolf.\u201d She tells him the red wolf was alone all its life, and it hunted by itself; it lived by itself, but then one day the red wolf found a grey wolf cub and decided to protect it. The red wolf took down bears for the grey wolf and other wolf tribes and adopted more members of the family. She says the red wolf is still out there protecting the grey wolf. The ancient asks, \u201dDo you want to protect your family?\u201d She says \u201cyes.\u201d The ancient grabbed her. The guy with red, scuffy hair tries to stop him. RUNNING, RUNNING, RUNNING, water, WATER?, TEARS, RUNNING, HIT, FALLING, FALLING, FALLING. The man with scruffy red hair on the ground, looking at the events unfold, unable to do anything, screams out to the moon, to the mountains, the clear sky, the snow whiter than the pearly gates, the fox, the deer, the rabbit, and the monster\u2014either the ancient or the girl, either his reality or the evil. She is thrown into the fire. The crackling of the fire becomes louder. We can see the cave they used to live in with blood\u2014enough to fill a river slither out as we hear two loud bloodcurdling, bone-ripping roars, one filled with pain, and one filled with the howls of a wolf awakening to a full moon. A monster comes out of the fire and disappears just as fast.\n\nThe Village. At night, we see the brother with scruffy hair and the sister crying, saying, \"Please save us from this nightmare, brother.\" \"Brother!?\" While the monster is breaking into every house and killing every human, as it breaks into their house, it looks at the brother and sister and leaves. The brother and sister walk outside; they are the only ones left."
+  }
+]
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var chapters = JSON.parse(document.getElementById('chapters-data').textContent);
+  var app = document.getElementById('app');
+  var canEdit = false;
+
+  function sortedChapters() {
+    return chapters.slice().sort(function (a, b) { return a.number - b.number; });
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function paragraphs(text) {
+    return text.split(/\n\s*\n/).map(function (p) {
+      return '<p>' + escapeHtml(p.trim()).replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+  }
+
+  function renderIndex() {
+    var list = sortedChapters();
+    var first = list[0];
+    var rows = list.map(function (c) {
+      return '' +
+        '<a class="chapter-row" href="#/read/' + c.id + '">' +
+          '<div class="chapter-num">' + String(c.number).padStart(2, '0') + '</div>' +
+          '<div class="chapter-meta">' +
+            '<div class="chapter-title">' + escapeHtml(c.title) + '</div>' +
+            '<div class="chapter-vol">' + escapeHtml(c.volume || '') + '</div>' +
+          '</div>' +
+          '<div class="chapter-arrow">&rsaquo;</div>' +
+        '</a>';
+    }).join('');
+
+    app.innerHTML = '' +
+      '<section class="hero">' +
+        '<div class="hero-inner">' +
+          '<div class="cover"><div class="cover-mark">WIP</div></div>' +
+          '<div class="hero-copy">' +
+            '<p class="kicker">Fiction &middot; Dark Fantasy</p>' +
+            '<h1 class="title">Work In Progress</h1>' +
+            '<p class="byline">By: <span class="accent">JustForFun</span></p>' +
+            '<div class="btn-row">' +
+              (first ? '<a class="btn btn-primary" href="#/read/' + first.id + '">Start Reading</a>' : '') +
+              '<a class="btn btn-ghost" href="#chapters">Chapters</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p class="synopsis">A mythology told in fragments &mdash; each chapter its own doomed witness, each witness carrying a piece of a much older truth.</p>' +
+      '</section>' +
+      '<div id="chapters"></div>' +
+      '<div class="section-head">' +
+        '<h2>Chapters</h2>' +
+        '<span class="count">' + list.length + ' chapter' + (list.length === 1 ? '' : 's') + '</span>' +
+      '</div>' +
+      '<div class="chapter-list">' +
+        (rows || '<div class="empty-state">No chapters yet.</div>') +
+      '</div>';
+  }
+
+  function renderReader(id) {
+    var list = sortedChapters();
+    var idx = list.findIndex(function (c) { return String(c.id) === String(id); });
+    if (idx === -1) { renderIndex(); return; }
+    var c = list[idx];
+    var prev = list[idx - 1];
+    var next = list[idx + 1];
+
+    var options = list.map(function (ch) {
+      return '<option value="' + ch.id + '"' + (ch.id === c.id ? ' selected' : '') + '>' +
+        'Ch. ' + ch.number + ' \u2014 ' + escapeHtml(ch.title) + '</option>';
+    }).join('');
+
+    function navBar(extraClass) {
+      return '' +
+        '<div class="reader-bar ' + (extraClass || '') + '">' +
+          '<a class="nav-btn" href="#/">Index</a>' +
+          (prev ? '<a class="nav-btn" href="#/read/' + prev.id + '">&larr; Prev</a>' : '<button class="nav-btn" disabled>&larr; Prev</button>') +
+          '<select onchange="location.hash=\'#/read/\'+this.value">' + options + '</select>' +
+          (next ? '<a class="nav-btn" href="#/read/' + next.id + '">Next &rarr;</a>' : '<button class="nav-btn" disabled>Next &rarr;</button>') +
+          '<span class="spacer"></span>' +
+        '</div>';
+    }
+
+    app.innerHTML = '' +
+      navBar() +
+      '<div class="chapter-head">' +
+        '<div class="vol">' + escapeHtml((c.volume || '').toUpperCase()) + '</div>' +
+        '<h1>' + escapeHtml(c.title) + '</h1>' +
+      '</div>' +
+      '<div class="prose">' + paragraphs(c.content) + '</div>' +
+      navBar('bottom');
+
+    window.scrollTo(0, 0);
+  }
+
+  function router() {
+    var hash = location.hash || '#/';
+    var m = hash.match(/^#\/read\/(.+)$/);
+    if (m) { renderReader(m[1]); } else { renderIndex(); }
+  }
+
+  window.addEventListener('hashchange', router);
+  router();
+
+  /* ---------- admin: add-chapter, backed by the artifact capability ---------- */
+
+  function nextChapterNumber() {
+    var max = 0;
+    chapters.forEach(function (c) { if (c.number > max) max = c.number; });
+    return max + 1;
+  }
+
+  function openModal() {
+    document.getElementById('fNumber').value = nextChapterNumber();
+    document.getElementById('fVolume').value = 'Volume 1';
+    document.getElementById('fTitle').value = '';
+    document.getElementById('fContent').value = '';
+    document.getElementById('modalStatus').textContent = '';
+    document.getElementById('modalOverlay').style.display = 'flex';
+  }
+  function closeModal() {
+    document.getElementById('modalOverlay').style.display = 'none';
+  }
+
+  document.getElementById('addChapterBtn').addEventListener('click', openModal);
+  document.getElementById('cancelModal').addEventListener('click', closeModal);
+  document.getElementById('modalOverlay').addEventListener('click', function (e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  });
+
+  document.getElementById('saveChapter').addEventListener('click', function () {
+    var num = parseInt(document.getElementById('fNumber').value, 10) || nextChapterNumber();
+    var vol = document.getElementById('fVolume').value.trim() || 'Volume 1';
+    var title = document.getElementById('fTitle').value.trim() || ('Chapter ' + num);
+    var content = document.getElementById('fContent').value;
+    var status = document.getElementById('modalStatus');
+
+    if (!content.trim()) { status.textContent = 'Paste some chapter text first.'; return; }
+
+    var newId = chapters.reduce(function (m, c) { return Math.max(m, c.id); }, 0) + 1;
+    chapters.push({ id: newId, number: num, title: title, volume: vol, content: content });
+
+    downloadUpdatedFile();
+    status.textContent = 'Downloaded updated site file \u2014 upload it to replace the one on your host.';
+    closeModal();
+    router();
+  });
+
+  function serializeDocument() {
+    var dataScript = document.getElementById('chapters-data');
+    dataScript.textContent = JSON.stringify(chapters, null, 2);
+    return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  }
+
+  function downloadUpdatedFile() {
+    var html = serializeDocument();
+    var blob = new Blob([html], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'index.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  }
+
+  /* Admin controls are always visible here since this is your own private
+     file on your own host \u2014 nobody else can reach this page's source
+     unless you give them the link, and only you have the file to redeploy. */
+  document.getElementById('addChapterBtn').style.display = 'inline-flex';
+})();
+</script>
+</body>
+</html>
