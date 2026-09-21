@@ -213,6 +213,14 @@
   }
   .sound-btn:hover { border-color: var(--accent); color: var(--accent); }
   .sound-btn.on { color: var(--accent); border-color: var(--accent); }
+  .audio-notice {
+    display: none; position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+    max-width: min(92vw, 460px); padding: 11px 16px; z-index: 1000;
+    background: var(--bg-elev); color: var(--text);
+    border: 1px solid var(--accent); border-radius: 12px;
+    font-size: 13px; line-height: 1.5; text-align: center;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  }
 
   .copyright-side {
     font-size: 11px;
@@ -525,7 +533,7 @@
 
 <button class="fab" id="addChapterBtn">+ Add Chapter</button>
 
-<div class="modal-overlay" id="modalOverlay" style="display: flex;">
+<div class="modal-overlay" id="modalOverlay" style="display: none;">
   <div class="modal">
     <h3>Add a chapter or story</h3>
     <p class="hint">
@@ -595,21 +603,55 @@
 
   /* ---------- ambient chapter sound ---------- */
   var AMBIENT_VOLUME = 0.22;
-  var soundEnabled = localStorage.getItem('eoh-sound-enabled') === '1';
+  var SOUND_KEY = 'eoh-sound-enabled';
+  function readSoundPref() {
+    try { return localStorage.getItem(SOUND_KEY); } catch (e) { return null; }
+  }
+  // On by default; a reader who mutes it with the speaker button stays muted.
+  var soundEnabled = readSoundPref() !== '0';
   var ambientAudio = null;
   var ambientCurrentSrc = null;
   var ambientFadeTimer = null;
+  var ambientSwitchTimer = null;
+  var noticeTimer = null;
+
+  // Small message near the bottom of the screen (used when a sound file can't load).
+  function showAudioNotice(msg) {
+    var n = document.getElementById('audioNotice');
+    if (!n) {
+      n = document.createElement('div');
+      n.id = 'audioNotice';
+      n.className = 'audio-notice';
+      document.body.appendChild(n);
+    }
+    n.textContent = msg;
+    n.style.display = 'block';
+    clearTimeout(noticeTimer);
+    noticeTimer = setTimeout(function () { n.style.display = 'none'; }, 9000);
+  }
+
+  // Spaces and other odd characters in file names are made safe for the browser.
+  function audioUrl(src) {
+    src = String(src || '').trim();
+    return /%[0-9a-f]{2}/i.test(src) ? src : encodeURI(src);
+  }
 
   function getAmbientEl() {
     if (!ambientAudio) {
-      ambientAudio = document.createElement('audio');
+      // Kept out of the page on purpose so it never ends up inside an exported file.
+      ambientAudio = new Audio();
       ambientAudio.loop = true;
-      ambientAudio.preload = 'none';
+      ambientAudio.preload = 'auto';
       ambientAudio.volume = 0;
-      document.body.appendChild(ambientAudio);
+      ambientAudio.addEventListener('error', function () {
+        if (!ambientCurrentSrc) return;
+        if (window.console) console.warn('[sound] could not load', ambientCurrentSrc, ambientAudio.error);
+        showAudioNotice('Ambient sound could not load: "' + ambientCurrentSrc + '". Check that the file is uploaded at exactly that path (folder and file names are case-sensitive).');
+      });
     }
     return ambientAudio;
   }
+
   function fadeAmbientTo(targetVolume, ms) {
     var el = getAmbientEl();
     if (ambientFadeTimer) clearInterval(ambientFadeTimer);
@@ -618,34 +660,72 @@
     var i = 0;
     ambientFadeTimer = setInterval(function () {
       i++;
-      el.volume = start + (targetVolume - start) * (i / steps);
+      try { el.volume = Math.max(0, Math.min(1, start + (targetVolume - start) * (i / steps))); } catch (e) {}
       if (i >= steps) {
-        el.volume = targetVolume;
+        try { el.volume = targetVolume; } catch (e) {}
         clearInterval(ambientFadeTimer);
         if (targetVolume === 0) el.pause();
       }
     }, ms / steps);
   }
+
+  // Browsers refuse to start sound until the reader has clicked, tapped or pressed a key.
+  // If that happens (for example when a chapter link is opened directly), wait for the
+  // first interaction and start the sound then.
+  var gestureArmed = false;
+  function armGestureRetry() {
+    if (gestureArmed) return;
+    gestureArmed = true;
+    var evts = ['pointerup', 'click', 'keydown', 'touchend'];
+    function handler() {
+      evts.forEach(function (n) { document.removeEventListener(n, handler, true); });
+      gestureArmed = false;
+      if (soundEnabled && ambientCurrentSrc) {
+        var el = getAmbientEl();
+        if (el.paused) { startPlayback(el); fadeAmbientTo(AMBIENT_VOLUME, 900); }
+      }
+    }
+    evts.forEach(function (n) { document.addEventListener(n, handler, true); });
+  }
+
+  function startPlayback(el) {
+    var p;
+    try { p = el.play(); } catch (e) { return; }
+    if (p && p.catch) {
+      p.catch(function (err) {
+        if (err && err.name === 'NotAllowedError') armGestureRetry();
+        // AbortError just means the track was switched while loading; the error event covers bad files.
+      });
+    }
+  }
+
   function playAmbient(src) {
     if (!src || !soundEnabled) return;
     var el = getAmbientEl();
     if (ambientCurrentSrc === src && !el.paused) return;
     ambientCurrentSrc = src;
+    if (ambientSwitchTimer) { clearTimeout(ambientSwitchTimer); ambientSwitchTimer = null; }
     var switchTrack = function () {
-      el.src = src;
-      el.play().catch(function () { /* blocked until a user gesture happens */ });
+      ambientSwitchTimer = null;
+      el.src = audioUrl(src);
+      startPlayback(el);
       fadeAmbientTo(AMBIENT_VOLUME, 900);
     };
-    if (el.volume > 0) { fadeAmbientTo(0, 500); setTimeout(switchTrack, 520); }
-    else switchTrack();
+    if (!el.paused && el.volume > 0) {
+      fadeAmbientTo(0, 500);
+      ambientSwitchTimer = setTimeout(switchTrack, 520);
+    } else {
+      switchTrack();
+    }
   }
   function stopAmbient() {
     ambientCurrentSrc = null;
+    if (ambientSwitchTimer) { clearTimeout(ambientSwitchTimer); ambientSwitchTimer = null; }
     if (ambientAudio) fadeAmbientTo(0, 500);
   }
   function setSoundEnabled(on) {
     soundEnabled = on;
-    localStorage.setItem('eoh-sound-enabled', on ? '1' : '0');
+    try { localStorage.setItem(SOUND_KEY, on ? '1' : '0'); } catch (e) {}
   }
 
   var soundObserver = null;
@@ -1062,6 +1142,8 @@
   function serializeDocument() {
     document.getElementById('chapters-data').textContent = JSON.stringify(chapters, null, 2);
     document.getElementById('stories-data').textContent = JSON.stringify(stories, null, 2);
+    var stray = document.getElementById('audioNotice');
+    if (stray && stray.parentNode) stray.parentNode.removeChild(stray);
     return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
   }
   function downloadUpdatedFile() {
