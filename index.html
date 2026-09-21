@@ -168,6 +168,31 @@
   }
   .synopsis-box p { margin: 0 0 1em; }
 
+  .stories-promo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    padding: 14px 16px;
+    margin-top: 18px;
+    border: 1px solid var(--accent-dim);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+  }
+  .stories-promo:hover { border-color: var(--accent); background: rgba(199,154,63,0.22); }
+  .stories-promo-icon {
+    flex: 0 0 auto;
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-text);
+  }
+  .stories-promo-text { flex: 1 1 auto; min-width: 0; }
+  .stories-promo-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .stories-promo-sub { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+  .stories-promo-arrow { flex: 0 0 auto; color: var(--accent); }
+
   .stories-link {
     display: flex;
     align-items: center;
@@ -177,9 +202,6 @@
     font-size: 12.5px;
     line-height: 1.5;
     color: var(--text-muted);
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-    margin-top: 16px;
   }
   .stories-link:hover { color: var(--accent); }
   .stories-link svg { flex: 0 0 auto; }
@@ -655,7 +677,8 @@
     download: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>',
     arrowRight: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
     speakerOn: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>',
-    speakerOff: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>'
+    speakerOff: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>',
+    book: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>'
   };
 
   function renderIndex() {
@@ -691,10 +714,17 @@
             (first ? '<a class="btn btn-primary" href="#/read/' + first.id + '">Start Reading</a>' : '<span class="btn btn-primary" style="opacity:.4;">No chapters yet</span>') +
             '<button class="btn btn-icon" id="downloadAllBtn" title="Download full story as text">' + icons.download + '</button>' +
           '</div>' +
+          '<a class="stories-promo" href="#/stories">' +
+            '<span class="stories-promo-icon">' + icons.book + '</span>' +
+            '<span class="stories-promo-text">' +
+              '<div class="stories-promo-title">This book isn\'t finished yet</div>' +
+              '<div class="stories-promo-sub">Have a look at another story of mine</div>' +
+            '</span>' +
+            '<span class="stories-promo-arrow">' + icons.arrowRight + '</span>' +
+          '</a>' +
           '<div class="synopsis-box">' +
             '<p>A mythology told in fragments &mdash; each chapter its own doomed witness, each one carrying a piece of a much older truth.</p>' +
           '</div>' +
-          '<a class="stories-link" href="#/stories">This book isn\'t finished yet &mdash; have a look at another story of mine' + icons.arrowRight + '</a>' +
           '<div class="copyright-side">&copy; 2026 Kaleb Wade. All rights reserved.<br>Not for redistribution or reproduction without permission.</div>' +
         '</aside>' +
         '<section class="main-panel">' +
