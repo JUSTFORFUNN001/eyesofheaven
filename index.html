@@ -13,8 +13,7 @@
      https://eyes-of-heaven.goatcounter.com and only you can log into it.
   3. Replace YOURCODE below with that site code (in BOTH spots).
 -->
-<script data-goatcounter="https://justforfunn.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
 <style>
   :root {
     --bg: #0b0c10;
@@ -390,6 +389,34 @@
   .prose strong { font-weight: 600; }
   .prose em { font-style: italic; }
   .prose .scene-break { text-align: center; color: var(--accent); margin: 2em 0; font-size: 15px; opacity: 0.8; }
+  .about-art-section { margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .about-art-heading { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 0 0 6px; color: var(--text); }
+  .about-art-sub { font-family: var(--sans); font-size: 13px; color: var(--text-faint); margin: 0 0 20px; }
+  .art-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  .art-thumb {
+    display: block; padding: 0; border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; background: var(--bg-elev); aspect-ratio: 1 / 1;
+  }
+  .art-thumb:hover { border-color: var(--accent); }
+  .art-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .art-empty { font-family: var(--sans); font-size: 13px; color: var(--text-faint); }
+
+  .art-lightbox {
+    position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.86);
+    display: flex; align-items: center; justify-content: center; padding: 32px;
+  }
+  .art-lightbox figure { margin: 0; max-width: min(92vw, 820px); text-align: center; }
+  .art-lightbox img { max-width: 100%; max-height: 78vh; border-radius: 6px; display: block; margin: 0 auto; }
+  .art-lightbox figcaption { margin-top: 12px; font-family: var(--sans); font-size: 13px; color: #d9d9d9; }
+  .art-lightbox-close {
+    position: absolute; top: 18px; right: 22px; background: none; border: none;
+    color: #fff; font-size: 32px; line-height: 1; padding: 4px 10px;
+  }
+  .art-lightbox-close:hover { color: var(--accent); }
   .reader-bar.bottom { border-top: 1px solid var(--border); margin-top: 40px; }
   .reader-copyright { text-align: center; font-size: 11px; color: var(--text-faint); padding: 28px 0 4px; }
 
@@ -549,7 +576,7 @@
     "number": 1,
     "title": "Blood and Snow",
     "volume": "Volume 1",
-    "content": "In the serene embrace of towering mountains, under a clear blue sky, and amidst snow whiter than the pearly gates, foxes, deer, and rabbits roam freely. The Village, wrapped in a quaint charm reminiscent of a tribal enclave, still clings to wood and a hint of iron. A scruffy-haired child, seemingly untouched by cleansing waters, tends to a lamb alongside his sister. But then, a chilling voice pierces the air: \"It destroyed the gate again.\" The sister gazes at her brother, pleading, \"Please save us from this nightmare, big brother.\"\n\nThe Past—a single wooden house emits wisps of smoke; this time is reminicent of the time before the Village. Two inhabitants reside within, a child of no more than 8 and a well-built man in his 30s. The child, silent as the minutes after a town bell rings, remains unnamed—silence is its only identity. The man, hulking yet exuding a fatherly aura, is known as Father. They share a simple dinner of lamb stew, rice, and water.\n\nThe Village, the brother and two others mend the broken fence, returning to the lamb's care. However, with each passing day, a lamb vanishes, its bones mysteriously returning. The elusive figure of the monster, or demon, remains unseen.\n\nThe Past: Father, with a voice draped in the resonance of ancient stories, shares with :: the haunting tale of a princess who, with unyielding courage, chose to embrace the consuming flames, a sacrificial shield against the lurking menace. This spectral figure, akin to a manifestation of nature's malevolence, materialised with elongated limbs that seemed to reach from the shadows. Its hollow eyes held an ethereal chill, and an eerie aura clung to it, casting an ominous presence throughout the princess's courageous narrative.\n\nThe Village. Again, the lamb has been taken—nothing weird—but again, the fence has been broken, and again, the sister asks her brother, \"Save us from this nightmare.\" So the boy does everything and comes back. Normal day.\n\nThe Past: Father is dead. We only see blood—no stab wound, no bite wound, just blood. Two men, appearing not only deprived of sustenance but also drained of life, stand with audible silence enveloping them. Their movements and intentions emanate a noise of despair as they hover, one of them holding :: by her wrist.\n\nThe Village. Again, the lamb, the fence, the sister, and the boy.\n\nThe Past. Another house; it's not the same one; it's like a wooden barn with people hanging from the roof with buckets. We see from :: perspective the same thing done to her, and the deprived men are shouting at them all. If you do what we say, you'll survive. One of the people tells them, \"I'm hungry. I need to eat.\" Having been here for weeks, they just cut him down. A couple days come by, then a couple weeks. He never comes back. Next to :: is a man in his upper 20s with scruffy, dark red hair and lashes across his back. :: shatters the deafening silence, fracturing the stillness that clings to her existence, her dead noise, and asks them, \"How can you do this to us and say we will survive what you have taken us for? Ignorant. Ignorant of the evil shit humans can do… what you do.\" They cut her down and took her to a different room, shouting, \"Never question us.\" On her right are a bunch of steel weapons, and behind her is one of the men with a whip. She's exhausted; it's probably been days.\n\nThe Village. This time there were no more sheep to take, so the monster took its first human. Again, the sister says to the brother, \"Will you save us from this nightmare?\" It's different this time. He looks at the blood on the once-pearl white snow.\n\nSTRUGGLE. STRUggle. Struggle. struggle. still. PAIN. PAIN. PAin. Pain. pain. silence.\n\nThe Past. Another opportunity, or, in an act of desperation, :: grabs a tool on her right and stabs one of the men. She quickly releases everyone who's hanging by the roof with buckets below them. Last, the guy with scruffy red hair grabs the weapon and quickly stabs the other guy, who only just came back from a hunt, killing him too. They all celebrate as they are released from their suffering, except the girl and the guy with scruffy red hair. They all decide to travel as a group. With the girl growing up to about 15, they come across a river, and on the other side is a hut with an old guy; he's withered decrepit, almost dusty, but has no struggle in a sense; he's witch like, an ancient, preparing a meal in a pot. They settle in a cave nearby. The winters go by as they hunt animals for food and fight off dangerous beasts, such as bears, wolves, and bigger bears.\n\n:: was always told stories by people \"of age,\" as she had known them, so she thought that now that she was the leader of their people after so long that she would tell the stories, she would no longer be controlled or forced to listen to other people's stories. But who would she tell—someone she's known? No, it had to be someone who she hasn't known, or rather, who hasn't known her. She decides that she wants to tell the ancient a story, so she runs to the banks of the river, repeatedly shouting, \"I want to tell you a story. I want to tell you a story.\" A couple of weeks go by. Something changed the bigger bear, as she knew it came to hybernate, but why here? Maybe he wanted to tell his own story. The man with scruffy red hair fears the bigger bear, but why though? He has fought way bigger bears, :: thinks to herself, and so the cave is no longer suitable to live in. They see the ancient again. They decide to go there, and she tells everyone to wait behind her while she speaks to the ancient. She tells him, \"I want to tell you a story in exchange for you protecting my family.\" The ancient says, \"Oh, your that girl who was shouting and telling me you want to tell me a story. Well, let's hear it then.\" The ancient takes her on a walk and asks her what type of story she wants to tell him. :: replies, “I don't know.” The ancient says, “Tell me what stories you have.” She says, \"I have one about myself, one about a princess, and one about a red wolf.\" The ancient says, ”Let's hear the one about yourself.” So they walk past, and the people didn't listen to her command to stay behind while she talked to the ancient they had settled in. They are sitting around a campfire, laughing, and the man with scruffy red hair is keeping his eye on her. She tells the story about herself from the time with Father in the single house. To the time with the two deprived men and hanging from a roof. She breaks down, crying. The ancient tells her, \"You are broken.\" She replies in a loud voice, saying she's not broken. She is the sole individual in the family who has remained resilient despite the adversity they have faced. She has been touched inappropriately, but she is not broken. Despite enduring the confinement of chains and the infliction of whip strikes, she remains resilient and unyielding; she is not broken. So the ancient, eager to hear more, says, ”Let's hear the story of the red wolf.” She tells him the red wolf was alone all its life, and it hunted by itself; it lived by itself, but then one day the red wolf found a grey wolf cub and decided to protect it. The red wolf took down bears for the grey wolf and other wolf tribes and adopted more members of the family. She says the red wolf is still out there protecting the grey wolf. The ancient asks, ”Do you want to protect your family?” She says “yes.” The ancient grabbed her. The guy with red, scuffy hair tries to stop him. RUNNING, RUNNING, RUNNING, water, WATER?, TEARS, RUNNING, HIT, FALLING, FALLING, FALLING. The man with scruffy red hair on the ground, looking at the events unfold, unable to do anything, screams out to the moon, to the mountains, the clear sky, the snow whiter than the pearly gates, the fox, the deer, the rabbit, and the monster—either the ancient or the girl, either his reality or the evil. She is thrown into the fire. The crackling of the fire becomes louder. We can see the cave they used to live in with blood—enough to fill a river slither out as we hear two loud bloodcurdling, bone-ripping roars, one filled with pain, and one filled with the howls of a wolf awakening to a full moon. A monster comes out of the fire and disappears just as fast.\n\nThe Village. At night, we see the brother with scruffy hair and the sister crying, saying, \"Please save us from this nightmare, brother.\" \"Brother!?\" While the monster is breaking into every house and killing every human, as it breaks into their house, it looks at the brother and sister and leaves. The brother and sister walk outside; they are the only ones left.",
+    "content": "**The Village**\n\nIn the serene embrace of towering mountains, under a clear blue sky, and amidst snow whiter than the pearly gates, foxes, deer, and rabbits roam freely. The Village, wrapped in a quaint charm reminiscent of a tribal enclave, still clings to wood and a hint of iron — chimneys threading smoke into a clear blue sky, snow banked clean against walls gone silver-grey with age. It's the kind of morning that eases your mind as you get up from bed.\n\nA scruffy-haired child, seemingly untouched by cleansing waters, tends to a lamb alongside his sister — his hair uncombed on purpose, scratching behind the animal's ear the way he has every morning since it was small enough to fit in both his hands. She stays close, younger and quicker to worry, her shawl pulled tight, one eye drifting toward the tree line, although she doesn't know why but there is nothing there.\n\nThe monster watches.\n\nA chilling voice pierces the air: \"It destroyed the gate again.\" One of the older herders, already moving, already furious in the way of a man who's mended the same fence three times this month and has run out of ways to call it bad luck.\n\nThe sister gazes at her brother, pleading, \"Please save us from this nightmare, big brother.\" He doesn't answer. He just holds his sister close, telling her that everything will be alright.\n\n---\n\n**The Past**\n\nA single wooden house emits wisps of smoke; this time is reminiscent of the time before the Village. Two inhabitants reside within, a child of no more than 8 and a well-built man in his 30s — the man built the way mountains are built, broad, tall and unhurried and permanent-looking in a way that made people trust him, every scar on his hands is from the woodwork he's done for most of his life.\n\nThe child, silent as the minutes after a town bell rings, remains unnamed : : , silence is her only identity. Not out of any unkindness in him. Just the quiet, ordinary way some things get put off by a busy, well-meaning man until putting it off becomes its own kind of habit. She has never once corrected him for it either.\n\nThe man, hulking yet exuding a fatherly aura, is known as Father. They share a simple dinner of lamb stew, rice, and water, and she watches him more than she eats, the way she always does, leaning toward whatever he says the way sunflowers lean toward the light.\n\nHe never seems to notice how closely she watches the door.\n\n---\n\n**The Village**\n\nThe brother and two others mend the broken fence, returning to the lamb's care — plank by plank, hauling and nailing until their hands ache with the cold. However, with each passing day, a lamb vanishes, its bones mysteriously returning — laid out near the tree line, picked so clean they might as well have been polished, arranged with a carefulness that unsettles the herders. The elusive figure of the monster, or demon, remains unseen. Nobody who's gone looking has come back. The elders have taken to calling it a bear rather than give it any truer name — as if a smaller word might, somehow, make it a smaller problem.\n\n---\n\n**The Past**\n\nFather, with a voice draped in the resonance of ancient stories, shares with : : the haunting tale of a princess who, with unyielding courage, chose to embrace the consuming flames, a sacrificial shield against a demon. He tells it the way he tells everything — leaning forward, voice dropping low at the frightening parts and climbing again at the brave ones, as though the story is a fire he's built specifically to keep the two of them warm.\n\nThis figure, akin to a manifestation of nature's malevolence, materialised with elongated limbs that seemed to reach from the shadows. Its eyes held an ethereal chill, and an eerie aura clung to it, casting an ominous presence throughout the princess's courageous narrative. Father never claims to have seen such a thing himself — he heard it from his own father, he says, who heard it from his — and every time he tells it he adds the same quiet reassurance at the end, that stories like this exist to be told, not to be true.\n\nThe girl doesn't say anything about the figure she sometimes catches by the door when the lamp burns low. She only listens harder, the way she always does, storing the princess and her flames away somewhere she'll be able to find them again later, when she needs them.\n\n---\n\n**The Village**\n\nAgain, the lamb has been taken—nothing weird—but again, the fence has been broken, and again, the sister asks her brother, \"Save us from this nightmare.\" So the boy does everything and comes back. Normal day. It's the particular relief of a routine everyone's grown almost fond of.\n\nPast the tree line, the monster is there again, unmoved from wherever it was standing the night before, or the night before that. It has learned, by now, the exact rhythm of this family's fear and relief.\n\n---\n\n**The Past**\n\nFather is dead. We only see blood—no stab wound, no bite wound, just blood, the floorboards drenched in it, dark and spreading in the lamplight he used to read stories by. There's no fight to be read in the room. No sign he even had time to stand.\n\nTwo men, appearing not only deprived of sustenance but also drained of life, stand with audible silence enveloping them — the kind of silence that isn't peace, but the absence of anything left in a person worth calling a voice. Their movements and intentions emanate a noise of despair as they hover, one of them holding : : by her wrist. Dragging her out of the wooden house and away into the distance.\n\nAbove them, where the smoke used to gather before it found its way out, it is there. It was there before the men arrived. It does not stop them. It does not help her.\n\n---\n\n**The Village**\n\nAgain, the lamb, the fence, the sister, and the boy—the same shape the days have always taken, worn so smooth by repetition that no one wonders why it keeps occurring, only how to get through it again.\n\n---\n\n**The Past**\n\nAnother house; it's not the same one; it's like a wooden barn with people hanging from the roof with buckets weighted at their feet, so they have the opportunity to relieve themselves without troubling anyone. We see from : :'s perspective the same thing done to her, and the deprived men are shouting at them all. \"If you do what we say, you'll survive.\" One of the people, head hung low, draped opposite : :, tells them, \"I'm hungry. I need to eat.\" Having been here for weeks, they just cut him down. A couple days come by, then a couple weeks. He never comes back.\n\nNext to her is a man in his upper 20s with scruffy, dark red hair and lashes across his back, each one a small story of something he tried to say that these men didn't want to hear. : : shatters the deafening silence, fracturing the stillness that clings to her existence, her dead noise, and asks them, \"How can you do this to us and say we will survive what you have taken us for? Ignorant. Ignorant of the evil shit humans can do… what you do. How can you do this to us?!\"\n\nThey cut her down, shouting at her while grabbing her by her wrist and dragging her to a new location, \"Never question us.\" On her right are a bunch of steel weapons, and behind her is one of the men with a whip.\n\nPAIN. PAIN. PAIN. PAIN.\n\nShe's exhausted; it's probably been days, though she's long since stopped trying to count them.\n\n---\n\n**The Village**\n\nThis time there were no more sheep to take, so the monster took its first human. Again, the sister says to the brother, \"Will you save us from this nightmare?\"\n\nHe looks at the blood on the pearl white snow. He understands.\n\nSTRUGGLE. STRUggle. Struggle. struggle. still. PAIN. PAIN. PAin. Pain. pain. silence.\n\n---\n\n**The Past**\n\nAn opportunity arises, or, in an act of desperation, : : grabs a tool on her right and stabs one of the men. He falls to the ground, his body not making a noise as it hits the wooden floor, the blood running out of him taking the form of a black tar substance. She doesn't notice, nor cares. She runs out of the small shed and quickly makes her way to the barn. She uses the knife she took in the shed and releases everyone who's hanging by the roof with buckets below them, working fast, scared, hands remembering how to move even as the rest of her wants to stop moving.\n\nOnce cut free, the guy with scruffy red hair grabs the weapon and quickly stabs the guy who only just came back from a hunt, killing him.\n\nsilence.\n\nThey all celebrate as they are released from their suffering, except : : and the guy with scruffy red hair — the two of them standing a little apart from the noise. They haven't caught up to the relief.\n\nThey all decide to travel as a group. None of them look back — back to the barn, or back to check if the men are alive, or even there at all. They just leave.\n\nWith the girl growing up to about 15, they come across a river, and on the other side is a hut with an old guy; he's withered, decrepit, almost dusty, but has no struggle in a sense; he's witch-like, an ancient, preparing a meal in a pot as though he's been standing at that fire since before the river had a name. They settle in a cave nearby. The winters go by as they hunt animals for food and fight off dangerous beasts, such as bears, wolves, and bigger bears — and somewhere in all those winters, this scattered handful of survivors starts to feel less like people who happened to escape together and more like a family.\n\n: : was always told stories by people \"of age,\" as she had known them, so she thought that now that she was the leader of their people after so long, she would tell the stories — she would no longer be controlled or forced to listen to other people's stories. But who would she tell? Someone she's known? No. It had to be someone who hasn't known her, so that whatever she said would land clean, without history getting in the way.\n\n: : decides that she wants to tell the Ancient a story, so she runs to the banks of the river, repeatedly shouting, \"I want to tell you a story. I want to tell you a story.\"\n\nA couple of weeks go by. Something changes about the bigger bear, the one she knew came to hibernate in the winter — but why here, of all places? It had never come to hibernate in this cave before. Maybe he wanted to tell his own story. The man with scruffy red hair fears this bear, though he's fought far bigger ones without flinching.\n\nThe cave no longer feels suitable to live in — the bigger bear, the cold. They see the ancient again, and decide to go there, across the river. She tells everyone to wait behind her while she speaks to him.\n\n\"I want to tell you a story,\" she says, \"in exchange for you protecting my family. Would you protect my family on that side of the river if I told you a story?\"\n\nHe turns around.\n\nIt watches.\n\n\"Oh, you're that girl who was shouting and telling me you want to tell me a story. Well, let's hear it, then. Come to me.\"\n\nThe ancient takes her on a walk. They walk along the river bank toward the ancient's fireplace, and it asks what kind of story she wants to tell him.\n\n\"I don't know,\" she replies.\n\n\"Tell me what stories you have.\"\n\n\"I have one about myself, one about a princess, and one about a red wolf.\"\n\n\"Let's hear the one about yourself.\"\n\nThe others don't stay behind, the way she told them to. They sit around a campfire not far off, on the other side of the river, laughing at something, and the man with scruffy red hair keeps one eye on her the whole time, separated by the water.\n\n: : tells the story about herself, from the time with Father in the single house, to the time with the two deprived men and hanging from a roof. She breaks down, crying — the first time she's let herself since before any of it started.\n\n\"You are broken,\" the ancient tells her.\n\n: : replies in a loud voice, saying she's not broken. She is the sole individual in the family who has remained resilient despite the adversity they have faced. She has been touched inappropriately, but she is not broken. Despite enduring the confinement of chains and the infliction of whip strikes, she remains resilient and unyielding; she is not broken.\n\nSo the ancient, eager to hear more, says, \"Let's hear the story of the red wolf.\"\n\n: : tells him the red wolf was alone all its life, hunted by itself, lived by itself — but then one day the red wolf found a grey wolf cub and decided to protect it. The red wolf took down bears for the grey wolf, and dangers besides, and they adopted more members of the family along the way. She says the red wolf is still out there, protecting the grey wolf.\n\n\"Do you want to protect your family?\" the ancient asks.\n\n\"Yes,\" she says.\n\nThe ancient grabs her. His iris starts shifting, his figure starts to deteriorate as black liquid comes out of its ears, and its fingers start to become longer. He smiles.\n\nThe man with red, scruffy hair tries to stop him. RUNNING, RUNNING, RUNNING, water, WATER?, TEARS, RUNNING, ….HIT…., FALLING, FALLING, FALLING. The man with scruffy red hair, on the ground, looking at the events unfold, unable to do anything, screams out to the moon, to the mountains, the clear sky, the snow whiter than the pearly gates, the fox, the deer, the rabbit, and the monster — either the ancient or the girl, either his reality or the evil.\n\n: : is thrown into the fire.\n\nThe crackling of the fire becomes louder.\n\nIT disappears after throwing : : into the fire.\n\nThe cave they used to live in fills with blood — enough to fill a river — it slithers out, as we hear two loud bloodcurdling, bone-ripping roars, one filled with pain, and one filled with the howls of a wolf awakening to a full moon. A monster comes out of the fire and disappears just as fast.\n\nAsh..\n\nTears..\n\n---\n\n**The Village**\n\nAt night, we see the brother with scruffy hair and the sister crying, saying, \"Please save us from this nightmare, brother.\" \"Brother!\" While the monster is breaking into every house and killing every human, as it breaks into their house, it looks at the brother and sister and leaves. The brother and sister walk outside; they are the only ones left.\n\nAt the tree line, in the dark that's held its distance all this time, it is still there. It looks at the two of them standing alone in the ruined snow for a moment longer.\n\nsilence",
     "audio": "audio/505999__dblover__howling-.mp3"
   },
   {
@@ -570,518 +597,29 @@
   }
 ]</script>
 
-<script type="application/json" id="stories-data">[]</script>
+<script type="application/json" id="stories-data">[
+  {
+    "id": 1,
+    "title": "The Cogwheel",
+    "tag": "Fable",
+    "content": "In the vast kingdom, where beauty rivalled the morning dew and opulence mirrored the splendour of Olympus, a dark secret lurked. Deep within the dungeons reserved for the most sinister criminals, a lone prisoner endured perpetual darkness and isolation. Enclosed by unyielding bricks and a soundless cell door, his only companion was a solitary cogwheel positioned at the room's center.\n\nEach day, the prisoner adhered to the king's mandated ritual: a meal, water, and a vial filled with an enigmatic potion. Reluctantly, he consumed these provisions, triggering a transformation in the once-inert cogwheel. As it came alive with clicks and whirrs, the guards perceived the prisoner as a mad soul, captivated by fanciful delusions. However, for him, each revolution of the wheel opened portals to realms beyond imagination.\n\nThe initial turn transported him to an idyllic meadow, bathed in golden hues beneath an eternal sun. The lush grass beneath his feet beckoned him to revel in the freedom that had long eluded him. Butterflies flitted about, casting colourful shadows on vibrant flowers—a haven of serenity resonating with the prisoner's forgotten desires for open spaces and the embrace of nature. It reminded the prisoner of the life he used to have as a servant in a stable.\n\nSubsequent turns ushered him into a mystical forest, where mushrooms surpassed the height of trees, and insects thrived in proportions akin to farm animals. The air buzzed with the symphony of chirping birds, and the scent of earth and foliage enveloped him, blurring the boundaries between reality and imagination. Each towering foliage invited introspection and wonder—a fantastical world that fueled the prisoner's curiosity. What other worlds could be seen? The possibilities are endless..\n\nAnother turn plunged him into the depths of the ocean, revealing an ethereal underwater realm. Surrounded by the tranquility of aquatic life, the prisoner marveled at the play of light filtering through the water. Vibrant coral reefs danced with myriad colours, and schools of fish painted liquid tapestries in ever-shifting currents. Despite initial apprehension, the prisoner found liberation in the weightlessness of this aquatic sanctuary. In realising that he could breathe underwater, he knew the seemingly untaxed use of the cogwheel—endless possibilities with no toll. The prisoner was astonished, almost in awe.\n\nThe cogwheel then transported him to the foot of a towering volcano, where the fiery sky hosted dragons and mythical creatures soaring through tumultuous clouds. The intense heat and molten rivers presented a stark contrast, evoking danger and exhilaration. Amidst roaring flames, the majesty of these mythical beings captivated the prisoner, their wings casting shadows on the turbulent landscapes below. The prisoner, truly astonished, exalted the King. \"How great a king must ye be? To cast such a power in a cell? Your divinity knows no bounds! All hail the King. Who was made to be, and who became! All hail the king! Testimony to God! The throne! All hail the throne befitting generations!\"\n\nThe final turn transported him to the grandeur of the king's throne room. Amid opulent surroundings, the prisoner's attempt to seek an audience revealed the harsh reality of time's inexorable march. Confused, the prisoner looks at himself — once youthful, he now stood aged beyond recognition, a testament to the ephemeral nature of life, juxtaposed against the king's seemingly eternal reign. The throne to which many generations exalted the generations before, and before that, but the King before even that. Each realm, with its unique blend of beauty, danger, and wonder, wove a tapestry of experiences that only served to serve the King. The cogwheel, a conduit between realms, carried the prisoner through landscapes that ignited him to the point of extinguishment. Now the remnants of the prisoner remain in reality inside the prison, where the guards knew him as a mad soul, but for the prisoner, his remnants are in the king's throne room, where the King knew nothing of him but he knew of the King.\n\nThe Immortal King."
+  }
+]</script>
+
+<!--
+  Sketches & process art shown on the About page.
+  1. Make a folder called "art" in your GitHub repo (same level as "audio").
+  2. Upload photos/scans of your drawings into it.
+  3. Add one entry below per image: {"src": "art/yourfile.jpg", "caption": "Whatever you want to say about it"}.
+     "caption" can be left as "" if you don't want one. Keep the commas between entries.
+-->
+<script type="application/json" id="art-data">[
+  { "src": "art/example1.jpg", "caption": "Early sketch of the captain" },
+  { "src": "art/example2.jpg", "caption": "" }
+]</script>
 
 <script>
-(function () {
-  "use strict";
-
-  var chapters = JSON.parse(document.getElementById('chapters-data').textContent);
-  var app = document.getElementById('app');
-  var state = { search: '', volume: 'ALL', sortDesc: false };
-
-  /* ---------- ambient chapter sound ---------- */
-  var AMBIENT_VOLUME = 0.22;
-  var SOUND_KEY = 'eoh-sound-enabled';
-  function readSoundPref() {
-    try { return localStorage.getItem(SOUND_KEY); } catch (e) { return null; }
-  }
-  // On by default; a reader who mutes it with the speaker button stays muted.
-  var soundEnabled = readSoundPref() !== '0';
-  var ambientAudio = null;
-  var ambientCurrentSrc = null;
-  var ambientFadeTimer = null;
-  var ambientSwitchTimer = null;
-  var noticeTimer = null;
-
-  // Small message near the bottom of the screen (used when a sound file can't load).
-  function showAudioNotice(msg) {
-    var n = document.getElementById('audioNotice');
-    if (!n) {
-      n = document.createElement('div');
-      n.id = 'audioNotice';
-      n.className = 'audio-notice';
-      document.body.appendChild(n);
-    }
-    n.textContent = msg;
-    n.style.display = 'block';
-    clearTimeout(noticeTimer);
-    noticeTimer = setTimeout(function () { n.style.display = 'none'; }, 9000);
-  }
-
-  // Spaces and other odd characters in file names are made safe for the browser.
-  function audioUrl(src) {
-    src = String(src || '').trim();
-    return /%[0-9a-f]{2}/i.test(src) ? src : encodeURI(src);
-  }
-
-  function getAmbientEl() {
-    if (!ambientAudio) {
-      // Kept out of the page on purpose so it never ends up inside an exported file.
-      ambientAudio = new Audio();
-      ambientAudio.loop = true;
-      ambientAudio.preload = 'auto';
-      ambientAudio.volume = 0;
-      ambientAudio.addEventListener('error', function () {
-        if (!ambientCurrentSrc) return;
-        if (window.console) console.warn('[sound] could not load', ambientCurrentSrc, ambientAudio.error);
-        showAudioNotice('Ambient sound could not load: "' + ambientCurrentSrc + '". Check that the file is uploaded at exactly that path (folder and file names are case-sensitive).');
-      });
-    }
-    return ambientAudio;
-  }
-
-  function fadeAmbientTo(targetVolume, ms) {
-    var el = getAmbientEl();
-    if (ambientFadeTimer) clearInterval(ambientFadeTimer);
-    var steps = 16;
-    var start = el.volume;
-    var i = 0;
-    ambientFadeTimer = setInterval(function () {
-      i++;
-      try { el.volume = Math.max(0, Math.min(1, start + (targetVolume - start) * (i / steps))); } catch (e) {}
-      if (i >= steps) {
-        try { el.volume = targetVolume; } catch (e) {}
-        clearInterval(ambientFadeTimer);
-        if (targetVolume === 0) el.pause();
-      }
-    }, ms / steps);
-  }
-
-  // Browsers refuse to start sound until the reader has clicked, tapped or pressed a key.
-  // If that happens (for example when a chapter link is opened directly), wait for the
-  // first interaction and start the sound then.
-  var gestureArmed = false;
-  function armGestureRetry() {
-    if (gestureArmed) return;
-    gestureArmed = true;
-    var evts = ['pointerup', 'click', 'keydown', 'touchend'];
-    function handler() {
-      evts.forEach(function (n) { document.removeEventListener(n, handler, true); });
-      gestureArmed = false;
-      if (soundEnabled && ambientCurrentSrc) {
-        var el = getAmbientEl();
-        if (el.paused) { startPlayback(el); fadeAmbientTo(AMBIENT_VOLUME, 900); }
-      }
-    }
-    evts.forEach(function (n) { document.addEventListener(n, handler, true); });
-  }
-
-  function startPlayback(el) {
-    var p;
-    try { p = el.play(); } catch (e) { return; }
-    if (p && p.catch) {
-      p.catch(function (err) {
-        if (err && err.name === 'NotAllowedError') armGestureRetry();
-        // AbortError just means the track was switched while loading; the error event covers bad files.
-      });
-    }
-  }
-
-  function playAmbient(src) {
-    if (!src || !soundEnabled) return;
-    var el = getAmbientEl();
-    if (ambientCurrentSrc === src && !el.paused) return;
-    ambientCurrentSrc = src;
-    if (ambientSwitchTimer) { clearTimeout(ambientSwitchTimer); ambientSwitchTimer = null; }
-    var switchTrack = function () {
-      ambientSwitchTimer = null;
-      el.src = audioUrl(src);
-      startPlayback(el);
-      fadeAmbientTo(AMBIENT_VOLUME, 900);
-    };
-    if (!el.paused && el.volume > 0) {
-      fadeAmbientTo(0, 500);
-      ambientSwitchTimer = setTimeout(switchTrack, 520);
-    } else {
-      switchTrack();
-    }
-  }
-  function stopAmbient() {
-    ambientCurrentSrc = null;
-    if (ambientSwitchTimer) { clearTimeout(ambientSwitchTimer); ambientSwitchTimer = null; }
-    if (ambientAudio) fadeAmbientTo(0, 500);
-  }
-  function setSoundEnabled(on) {
-    soundEnabled = on;
-    try { localStorage.setItem(SOUND_KEY, on ? '1' : '0'); } catch (e) {}
-  }
-
-  var soundObserver = null;
-  function wireSoundMarkers(defaultSrc) {
-    if (soundObserver) soundObserver.disconnect();
-    if (soundEnabled && defaultSrc) playAmbient(defaultSrc); else stopAmbient();
-    var markers = document.querySelectorAll('.sound-marker');
-    if (!markers.length) return;
-    soundObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var src = entry.target.getAttribute('data-audio-src');
-          if (soundEnabled) playAmbient(src);
-        }
-      });
-    }, { rootMargin: '-40% 0px -40% 0px' });
-    markers.forEach(function (m) { soundObserver.observe(m); });
-  }
-
-  function sortedChapters() {
-    var list = chapters.slice().sort(function (a, b) {
-      return state.sortDesc ? b.number - a.number : a.number - b.number;
-    });
-    if (state.volume !== 'ALL') list = list.filter(function (c) { return (c.volume || '') === state.volume; });
-    if (state.search.trim()) {
-      var q = state.search.trim().toLowerCase();
-      list = list.filter(function (c) {
-        return c.title.toLowerCase().indexOf(q) !== -1 || String(c.number).indexOf(q) !== -1;
-      });
-    }
-    return list;
-  }
-
-  function allVolumes() {
-    var v = [];
-    chapters.forEach(function (c) { if (c.volume && v.indexOf(c.volume) === -1) v.push(c.volume); });
-    return v;
-  }
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-  function inlineMarkup(raw) {
-    // Footnotes {{...}} are set aside first so their text is never touched by the formatting below.
-    var notes = [];
-    var tokenised = raw.replace(/\{\{([^}]*)\}\}/g, function (m, note) {
-      notes.push(note);
-      return '\uE000' + (notes.length - 1) + '\uE001';
-    });
-    var html = escapeHtml(tokenised)
-      .replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')   // **bold**
-      .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')               // *italic*
-      .replace(/\n/g, '<br>');
-    return html.replace(/\uE000(\d+)\uE001/g, function (m, i) {
-      return '<button type="button" class="annot-icon" data-note="' + encodeURIComponent(notes[+i]) + '" aria-label="note">&#10022;</button>';
-    });
-  }
-
-  function paragraphs(text) {
-    return text.split(/\n\s*\n/).map(function (block) {
-      var trimmed = block.trim();
-      if (/^-{3,}$/.test(trimmed)) return '<div class="scene-break" role="separator">&#10022;</div>';
-      var imgMatch = trimmed.match(/^\[\[img:\s*([^\]\|]+?)\s*(?:\|\|\s*(.*?))?\]\]$/i);
-      if (imgMatch) {
-        var src = imgMatch[1].trim();
-        var cap = imgMatch[2] ? imgMatch[2].trim() : '';
-        return '<figure class="chapter-figure"><img src="' + escapeHtml(src) + '" alt="' + escapeHtml(cap || 'illustration') + '" loading="lazy">' +
-          (cap ? '<figcaption>' + escapeHtml(cap) + '</figcaption>' : '') + '</figure>';
-      }
-      var sndMatch = trimmed.match(/^\[\[sound:\s*([^\]\|]+?)\s*(?:\|\|\s*(.*?))?\]\]$/i);
-      if (sndMatch) {
-        var sndSrc = sndMatch[1].trim();
-        var sndLabel = sndMatch[2] ? sndMatch[2].trim() : '';
-        return '<span class="sound-marker" data-audio-src="' + escapeHtml(sndSrc) + '" data-audio-label="' + escapeHtml(sndLabel) + '"></span>';
-      }
-      return '<p>' + inlineMarkup(trimmed) + '</p>';
-    }).join('');
-  }
-
-  var openAnnotIcon = null;
-  function closeAllAnnots() {
-    document.querySelectorAll('.annot-tip-popup').forEach(function (t) { t.remove(); });
-    if (openAnnotIcon) openAnnotIcon.classList.remove('open');
-    openAnnotIcon = null;
-  }
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('.annot-icon');
-    var reopening = btn && btn !== openAnnotIcon;
-    closeAllAnnots();
-    if (btn && reopening) {
-      btn.classList.add('open');
-      openAnnotIcon = btn;
-      var tip = document.createElement('div');
-      tip.className = 'annot-tip-popup';
-      tip.textContent = decodeURIComponent(btn.getAttribute('data-note'));
-      document.body.appendChild(tip);
-      var rect = btn.getBoundingClientRect();
-      var tipWidth = tip.offsetWidth;
-      var left = Math.min(rect.left, window.innerWidth - tipWidth - 16);
-      left = Math.max(16, left);
-      tip.style.left = left + 'px';
-      tip.style.top = (rect.bottom + 8) + 'px';
-    }
-  });
-  document.addEventListener('scroll', closeAllAnnots, true);
-  window.addEventListener('resize', closeAllAnnots);
-
-  var icons = {
-    back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>',
-    search: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
-    sort: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>',
-    download: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>',
-    arrowRight: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
-    speakerOn: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>',
-    speakerOff: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>',
-    book: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>'
-  };
-
-  function renderIndex() {
-    stopAmbient();
-    var list = sortedChapters();
-    var full = chapters.slice().sort(function (a, b) { return a.number - b.number; });
-    var first = full[0];
-    var vols = allVolumes();
-
-    var rows = list.map(function (c) {
-      return '' +
-        '<a class="chapter-card" href="#/read/' + c.id + '">' +
-          '<div class="chapter-card-left">' +
-            '<div class="chapter-eyebrow">CHAPTER ' + c.number + '</div>' +
-            '<div class="chapter-name">' + escapeHtml(c.title) + '</div>' +
-          '</div>' +
-          '<div class="chapter-tag">' + escapeHtml(c.volume || '') + '</div>' +
-        '</a>';
-    }).join('');
-
-    var volOptions = '<option value="ALL">All Volumes</option>' + vols.map(function (v) {
-      return '<option value="' + escapeHtml(v) + '"' + (state.volume === v ? ' selected' : '') + '>' + escapeHtml(v) + '</option>';
-    }).join('');
-
-    app.innerHTML = '' +
-      '<div class="shell">' +
-        '<aside class="side">' +
-          '<a class="back-btn" href="#/" title="Home">' + icons.back + '</a>' +
-          '<div class="cover"><div class="cover-mark">WIP</div></div>' +
-          '<h1 class="book-title">Eyes of Heaven</h1>' +
-          '<p class="book-byline">By: Kaleb Wade</p>' +
-          '<div class="side-actions">' +
-            (first ? '<a class="btn btn-primary" href="#/read/' + first.id + '">Start Reading</a>' : '<span class="btn btn-primary" style="opacity:.4;">No chapters yet</span>') +
-            '<button class="btn btn-icon" id="downloadAllBtn" title="Download full story as text">' + icons.download + '</button>' +
-          '</div>' +
-          '<a class="stories-link" href="#/about" style="margin-bottom:14px;">About this book &amp; the author</a>' +
-          '<a class="stories-promo" href="#/stories">' +
-            '<span class="stories-promo-icon">' + icons.book + '</span>' +
-            '<span class="stories-promo-text">' +
-              '<div class="stories-promo-title">This book isn\'t finished yet</div>' +
-              '<div class="stories-promo-sub">Have a look at another story of mine</div>' +
-            '</span>' +
-            '<span class="stories-promo-arrow">' + icons.arrowRight + '</span>' +
-          '</a>' +
-          '<div class="synopsis-box">' +
-            '<p>A mythology told in fragments &mdash; each chapter its own doomed witness, each one carrying a piece of a much older truth.</p>' +
-          '</div>' +
-          '<div class="copyright-side">&copy; 2026 Kaleb Wade. All rights reserved.<br>Not for redistribution or reproduction without permission.</div>' +
-        '</aside>' +
-        '<section class="main-panel">' +
-          '<div class="toolbar">' +
-            '<div class="search-wrap">' + icons.search + '<input id="searchInput" type="text" placeholder="Search title or number..." value="' + escapeHtml(state.search) + '"></div>' +
-            '<button class="tool-btn' + (state.sortDesc ? ' active' : '') + '" id="sortBtn" title="Toggle sort order">' + icons.sort + '</button>' +
-            '<select class="vol-select" id="volSelect">' + volOptions + '</select>' +
-          '</div>' +
-          '<div class="list-scroll">' +
-            (rows || '<div class="empty-state">No chapters match.</div>') +
-          '</div>' +
-        '</section>' +
-      '</div>';
-
-    document.getElementById('searchInput').addEventListener('input', function (e) {
-      state.search = e.target.value;
-      renderIndex();
-      var el = document.getElementById('searchInput');
-      el.focus();
-      el.selectionStart = el.selectionEnd = el.value.length;
-    });
-    document.getElementById('sortBtn').addEventListener('click', function () {
-      state.sortDesc = !state.sortDesc;
-      renderIndex();
-    });
-    document.getElementById('volSelect').addEventListener('change', function (e) {
-      state.volume = e.target.value;
-      renderIndex();
-    });
-    document.getElementById('downloadAllBtn').addEventListener('click', downloadFullStory);
-  }
-
-  function downloadFullStory() {
-    var full = chapters.slice().sort(function (a, b) { return a.number - b.number; });
-    var text = full.map(function (c) {
-      return 'CHAPTER ' + c.number + ' \u2014 ' + c.title + ' (' + (c.volume || '') + ')\n\n' + c.content;
-    }).join('\n\n\n');
-    var blob = new Blob([text], { type: 'text/plain' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url; a.download = 'Eyes of Heaven - full text.txt';
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
-  }
-
-  function renderAbout() {
-    stopAmbient();
-    app.className = '';
-    app.innerHTML = '' +
-      '<div class="reader-shell"><div class="reader-inner">' +
-        '<div class="reader-bar">' +
-          '<a class="nav-btn" href="#/">&larr; Index</a>' +
-        '</div>' +
-        '<div class="chapter-head">' +
-          '<div class="vol">ABOUT</div>' +
-          '<h1>About This Book &amp; Me</h1>' +
-        '</div>' +
-        '<div class="prose">' +
-          '<p>I\u2019m Kaleb Wade, a university student with a soft spot for maths and, somewhat against the odds, no free time at all \u2014 writing has stayed my hobby anyway. It started in high school, after a dream I couldn\u2019t stop thinking about. I told my best friend about it the next morning, and somewhere in the retelling I realised it would make a good story, so I started writing it down.</p>' +
-          '<p>I don\u2019t get to write as often as I\u2019d like, but I hope whoever finds their way here enjoys it. The site itself took a long time to build and get working properly \u2014 my university courses ended up being more useful for that than I expected. Most of the book still starts life as notes on my phone before I move it over to Word to edit properly.</p>' +
-          '<p><strong>A note on AI:</strong> I don\u2019t use AI to write my stories. None of Eyes of Heaven is AI-generated \u2014 every word is mine.</p>' +
-        '</div>' +
-        '<div class="reader-copyright">&copy; 2026 Kaleb Wade. All rights reserved. Not for redistribution or reproduction without permission.</div>' +
-      '</div></div>';
-    document.querySelector('.reader-shell').scrollTop = 0;
-  }
-
-  function renderReader(id) {
-    var list = chapters.slice().sort(function (a, b) { return a.number - b.number; });
-    var idx = list.findIndex(function (c) { return String(c.id) === String(id); });
-    if (idx === -1) { renderIndex(); return; }
-    var c = list[idx];
-    var prev = list[idx - 1];
-    var next = list[idx + 1];
-
-    var options = list.map(function (ch) {
-      return '<option value="' + ch.id + '"' + (ch.id === c.id ? ' selected' : '') + '>Ch. ' + ch.number + ' \u2014 ' + escapeHtml(ch.title) + '</option>';
-    }).join('');
-
-    function navBar(extraClass) {
-      return '' +
-        '<div class="reader-bar ' + (extraClass || '') + '">' +
-          '<a class="nav-btn" href="#/">Index</a>' +
-          (prev ? '<a class="nav-btn" href="#/read/' + prev.id + '">&larr; Prev</a>' : '<button class="nav-btn" disabled>&larr; Prev</button>') +
-          '<select onchange="location.hash=\'#/read/\'+this.value">' + options + '</select>' +
-          (next ? '<a class="nav-btn" href="#/read/' + next.id + '">Next &rarr;</a>' : '<button class="nav-btn" disabled>Next &rarr;</button>') +
-          '<span class="spacer"></span>' +
-          (c.audio ? '<button class="sound-btn' + (soundEnabled ? ' on' : '') + '" id="soundToggle" title="Toggle ambient sound">' + (soundEnabled ? icons.speakerOn : icons.speakerOff) + '</button>' : '') +
-        '</div>';
-    }
-
-    app.innerHTML = '' +
-      '<div class="reader-shell"><div class="reader-inner">' +
-        navBar() +
-        '<div class="chapter-head">' +
-          '<div class="vol">' + escapeHtml((c.volume || '').toUpperCase()) + '</div>' +
-          '<h1>' + escapeHtml(c.title) + '</h1>' +
-        '</div>' +
-        '<div class="prose">' + paragraphs(c.content) + '</div>' +
-        navBar('bottom') +
-        '<div class="reader-copyright">&copy; 2026 Kaleb Wade. All rights reserved. Not for redistribution or reproduction without permission.</div>' +
-      '</div></div>';
-
-    document.querySelector('.reader-shell').scrollTop = 0;
-
-    if (c.audio) {
-      wireSoundMarkers(c.audio);
-      document.querySelectorAll('#soundToggle').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          setSoundEnabled(!soundEnabled);
-          if (soundEnabled) playAmbient(c.audio); else stopAmbient();
-          document.querySelectorAll('#soundToggle').forEach(function (b) {
-            b.classList.toggle('on', soundEnabled);
-            b.innerHTML = soundEnabled ? icons.speakerOn : icons.speakerOff;
-          });
-        });
-      });
-    } else {
-      stopAmbient();
-    }
-  }
-
-  var stories = JSON.parse(document.getElementById('stories-data').textContent);
-
-  function renderStoriesIndex() {
-    stopAmbient();
-    app.className = 'theme-stories';
-    var list = stories.slice().sort(function (a, b) { return a.id - b.id; });
-    var rows = list.map(function (s) {
-      return '' +
-        '<a class="chapter-card" href="#/stories/read/' + s.id + '">' +
-          '<div class="chapter-card-left">' +
-            '<div class="chapter-eyebrow">SHORT STORY</div>' +
-            '<div class="chapter-name">' + escapeHtml(s.title) + '</div>' +
-          '</div>' +
-          '<div class="chapter-tag">' + escapeHtml(s.tag || '') + '</div>' +
-        '</a>';
-    }).join('');
-
-    app.innerHTML = '' +
-      '<div class="shell">' +
-        '<aside class="side">' +
-          '<a class="back-btn" href="#/" title="Back to Eyes of Heaven">' + icons.back + '</a>' +
-          '<div class="cover"><div class="cover-mark">&#10022;</div></div>' +
-          '<h1 class="book-title">Other Stories</h1>' +
-          '<p class="book-byline">By: Kaleb Wade</p>' +
-          '<div class="synopsis-box">' +
-            '<p>Standalone pieces that live outside the main book &mdash; different worlds, different rules.</p>' +
-          '</div>' +
-          '<a class="stories-link" href="#/">&larr; Back to Eyes of Heaven</a>' +
-        '</aside>' +
-        '<section class="main-panel">' +
-          '<div class="list-scroll" style="padding-top:28px;">' +
-            (rows || '<div class="empty-state">No short stories posted yet &mdash; check back soon.</div>') +
-          '</div>' +
-        '</section>' +
-      '</div>';
-  }
-
-  function renderStoryReader(id) {
-    var list = stories.slice().sort(function (a, b) { return a.id - b.id; });
-    var s = list.find(function (x) { return String(x.id) === String(id); });
-    if (!s) { renderStoriesIndex(); return; }
-    app.className = 'theme-stories';
-
-    if (s.audio) { wireSoundMarkers(s.audio); } else { stopAmbient(); }
-
-    app.innerHTML = '' +
-      '<div class="reader-shell"><div class="reader-inner">' +
-        '<div class="reader-bar">' +
-          '<a class="nav-btn" href="#/stories">All Stories</a>' +
-          '<span class="spacer"></span>' +
-          (s.audio ? '<button class="sound-btn' + (soundEnabled ? ' on' : '') + '" id="storySoundToggle" title="Toggle ambient sound">' + (soundEnabled ? icons.speakerOn : icons.speakerOff) + '</button>' : '') +
-        '</div>' +
-        '<div class="chapter-head">' +
-          '<div class="vol">STANDALONE</div>' +
-          '<h1>' + escapeHtml(s.title) + '</h1>' +
-        '</div>' +
-        '<div class="prose">' + paragraphs(s.content) + '</div>' +
-        '<div class="reader-bar bottom"><a class="nav-btn" href="#/stories">&larr; All Stories</a><span class="spacer"></span></div>' +
-        '<div class="reader-copyright">&copy; 2026 Kaleb Wade. All rights reserved. Not for redistribution or reproduction without permission.</div>' +
-      '</div></div>';
-
-    document.querySelector('.reader-shell').scrollTop = 0;
-
-    if (s.audio) {
-      document.getElementById('storySoundToggle').addEventListener('click', function () {
-        setSoundEnabled(!soundEnabled);
-        if (soundEnabled) playAmbient(s.audio); else stopAmbient();
-        var b = document.getElementById('storySoundToggle');
-        b.classList.toggle('on', soundEnabled);
-        b.innerHTML = soundEnabled ? icons.speakerOn : icons.speakerOff;
-      });
-    }
-  }
-
-  function router() {
-    var hash = location.hash || '#/';
-    var mRead = hash.match(/^#\/read\/(.+)$/);
-    var mStoryRead = hash.match(/^#\/stories\/read\/(.+)$/);
-    if (hash === '#/about') { renderAbout(); return; }
-    app.className = '';
-    if (mStoryRead) { renderStoryReader(mStoryRead[1]); }
-    else if (hash === '#/stories') { renderStoriesIndex(); }
-    else if (mRead) { renderReader(mRead[1]); }
-    else { renderIndex(); }
-  }
-
-  window.addEventListener('hashchange', router);
-  router();
-
-})();
+!function(){"use strict";var e=JSON.parse(document.getElementById("chapters-data").textContent),t=document.getElementById("app"),n={search:"",volume:"ALL",sortDesc:!1},o="eoh-sound-enabled";var a="0"!==function(){try{return localStorage.getItem(o)}catch(e){return null}}(),r=null,i=null,s=null,l=null,c=null;function d(){return r||((r=new Audio).loop=!0,r.preload="auto",r.volume=0,r.addEventListener("error",function(){var e,t;i&&(window.console&&console.warn("[sound] could not load",i,r.error),e='Ambient sound could not load: "'+i+'". Check that the file is uploaded at exactly that path (folder and file names are case-sensitive).',(t=document.getElementById("audioNotice"))||((t=document.createElement("div")).id="audioNotice",t.className="audio-notice",document.body.appendChild(t)),t.textContent=e,t.style.display="block",clearTimeout(c),c=setTimeout(function(){t.style.display="none"},9e3))})),r}function u(e,t){var n=d();s&&clearInterval(s);var o=n.volume,a=0;s=setInterval(function(){a++;try{n.volume=Math.max(0,Math.min(1,o+a/16*(e-o)))}catch(e){}if(a>=16){try{n.volume=e}catch(e){}clearInterval(s),0===e&&n.pause()}},t/16)}var v=!1;function h(e){var t;try{t=e.play()}catch(e){return}t&&t.catch&&t.catch(function(e){e&&"NotAllowedError"===e.name&&function(){if(!v){v=!0;var e=["pointerup","click","keydown","touchend"];e.forEach(function(e){document.addEventListener(e,t,!0)})}function t(){if(e.forEach(function(e){document.removeEventListener(e,t,!0)}),v=!1,a&&i){var n=d();n.paused&&(h(n),u(.22,900))}}}()})}function p(e){if(e&&a){var t=d();if(i!==e||t.paused){i=e,l&&(clearTimeout(l),l=null);var n=function(){l=null,t.src=function(e){return e=String(e||"").trim(),/%[0-9a-f]{2}/i.test(e)?e:encodeURI(e)}(e),h(t),u(.22,900)};!t.paused&&t.volume>0?(u(0,500),l=setTimeout(n,520)):n()}}}function m(){i=null,l&&(clearTimeout(l),l=null),r&&u(0,500)}function f(e){a=e;try{localStorage.setItem(o,e?"1":"0")}catch(e){}}var g=null;function b(e){g&&g.disconnect(),a&&e?p(e):m();var t=document.querySelectorAll(".sound-marker");t.length&&(g=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){var t=e.target.getAttribute("data-audio-src");a&&p(t)}})},{rootMargin:"-40% 0px -40% 0px"}),t.forEach(function(e){g.observe(e)}))}function y(e){return String(e).replace(/[&<>"']/g,function(e){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[e]})}function w(e){return e.split(/\n\s*\n/).map(function(e){var t=e.trim();if(/^-{3,}$/.test(t))return'<div class="scene-break" role="separator">&#10022;</div>';var n=t.match(/^\[\[img:\s*([^\]\|]+?)\s*(?:\|\|\s*(.*?))?\]\]$/i);if(n){var o=n[1].trim(),a=n[2]?n[2].trim():"";return'<figure class="chapter-figure"><img src="'+y(o)+'" alt="'+y(a||"illustration")+'" loading="lazy">'+(a?"<figcaption>"+y(a)+"</figcaption>":"")+"</figure>"}var r,i=t.match(/^\[\[sound:\s*([^\]\|]+?)\s*(?:\|\|\s*(.*?))?\]\]$/i);if(i){var s=i[1].trim(),l=i[2]?i[2].trim():"";return'<span class="sound-marker" data-audio-src="'+y(s)+'" data-audio-label="'+y(l)+'"></span>'}return"<p>"+(r=[],y(t.replace(/\{\{([^}]*)\}\}/g,function(e,t){return r.push(t),""+(r.length-1)+""})).replace(/\*\*([^*\n]+?)\*\*/g,"<strong>$1</strong>").replace(/\*([^*\n]+?)\*/g,"<em>$1</em>").replace(/\n/g,"<br>").replace(/\uE000(\d+)\uE001/g,function(e,t){return'<button type="button" class="annot-icon" data-note="'+encodeURIComponent(r[+t])+'" aria-label="note">&#10022;</button>'})+"</p>")}).join("")}var k=null;function E(){document.querySelectorAll(".annot-tip-popup").forEach(function(e){e.remove()}),k&&k.classList.remove("open"),k=null}document.addEventListener("click",function(e){var t=e.target.closest(".annot-icon"),n=t&&t!==k;if(E(),t&&n){t.classList.add("open"),k=t;var o=document.createElement("div");o.className="annot-tip-popup",o.textContent=decodeURIComponent(t.getAttribute("data-note")),document.body.appendChild(o);var a=t.getBoundingClientRect(),r=o.offsetWidth,i=Math.min(a.left,window.innerWidth-r-16);i=Math.max(16,i),o.style.left=i+"px",o.style.top=a.bottom+8+"px"}}),document.addEventListener("scroll",E,!0),window.addEventListener("resize",E);var x='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>',I='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',L='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>',A='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>',S='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',T='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>',B='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>',M='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>';function C(){m();var o,a=function(){var t=e.slice().sort(function(e,t){return n.sortDesc?t.number-e.number:e.number-t.number});if("ALL"!==n.volume&&(t=t.filter(function(e){return(e.volume||"")===n.volume})),n.search.trim()){var o=n.search.trim().toLowerCase();t=t.filter(function(e){return-1!==e.title.toLowerCase().indexOf(o)||-1!==String(e.number).indexOf(o)})}return t}(),r=e.slice().sort(function(e,t){return e.number-t.number})[0],i=(o=[],e.forEach(function(e){e.volume&&-1===o.indexOf(e.volume)&&o.push(e.volume)}),o),s=a.map(function(e){return'<a class="chapter-card" href="#/read/'+e.id+'"><div class="chapter-card-left"><div class="chapter-eyebrow">CHAPTER '+e.number+'</div><div class="chapter-name">'+y(e.title)+'</div></div><div class="chapter-tag">'+y(e.volume||"")+"</div></a>"}).join(""),l='<option value="ALL">All Volumes</option>'+i.map(function(e){return'<option value="'+y(e)+'"'+(n.volume===e?" selected":"")+">"+y(e)+"</option>"}).join("");t.innerHTML='<div class="shell"><aside class="side"><a class="back-btn" href="#/" title="Home">'+x+'</a><div class="cover"><div class="cover-mark">WIP</div></div><h1 class="book-title">Eyes of Heaven</h1><p class="book-byline">By: Kaleb Wade</p><div class="side-actions">'+(r?'<a class="btn btn-primary" href="#/read/'+r.id+'">Start Reading</a>':'<span class="btn btn-primary" style="opacity:.4;">No chapters yet</span>')+'<button class="btn btn-icon" id="downloadAllBtn" title="Download full story as text">'+A+'</button></div><a class="stories-link" href="#/about" style="margin-bottom:14px;">About this book &amp; the author</a><a class="stories-promo" href="#/stories"><span class="stories-promo-icon">'+M+'</span><span class="stories-promo-text"><div class="stories-promo-title">This book isn\'t finished yet</div><div class="stories-promo-sub">Have a look at another story of mine</div></span><span class="stories-promo-arrow">'+S+'</span></a><div class="synopsis-box"><p>A mythology told in fragments &mdash; each chapter its own doomed witness, each one carrying a piece of a much older truth.</p></div><div class="copyright-side">&copy; 2026 Kaleb Wade. All rights reserved.<br>Not for redistribution or reproduction without permission.</div></aside><section class="main-panel"><div class="toolbar"><div class="search-wrap">'+I+'<input id="searchInput" type="text" placeholder="Search title or number..." value="'+y(n.search)+'"></div><button class="tool-btn'+(n.sortDesc?" active":"")+'" id="sortBtn" title="Toggle sort order">'+L+'</button><select class="vol-select" id="volSelect">'+l+'</select></div><div class="list-scroll">'+(s||'<div class="empty-state">No chapters match.</div>')+"</div></section></div>",document.getElementById("searchInput").addEventListener("input",function(e){n.search=e.target.value,C();var t=document.getElementById("searchInput");t.focus(),t.selectionStart=t.selectionEnd=t.value.length}),document.getElementById("sortBtn").addEventListener("click",function(){n.sortDesc=!n.sortDesc,C()}),document.getElementById("volSelect").addEventListener("change",function(e){n.volume=e.target.value,C()}),document.getElementById("downloadAllBtn").addEventListener("click",N)}function N(){var t=e.slice().sort(function(e,t){return e.number-t.number}),n=t.map(function(e){return"CHAPTER "+e.number+" — "+e.title+" ("+(e.volume||"")+")\n\n"+e.content}).join("\n\n\n"),o=new Blob([n],{type:"text/plain"}),a=URL.createObjectURL(o),r=document.createElement("a");r.href=a,r.download="Eyes of Heaven - full text.txt",document.body.appendChild(r),r.click(),document.body.removeChild(r),setTimeout(function(){URL.revokeObjectURL(a)},2e3)}function H(){var e=document.getElementById("artLightbox");e&&e.parentNode&&e.parentNode.removeChild(e)}function O(){m(),t.className="",t.innerHTML='<div class="reader-shell"><div class="reader-inner"><div class="reader-bar"><a class="nav-btn" href="#/">&larr; Index</a></div><div class="chapter-head"><div class="vol">ABOUT</div><h1>About This Book &amp; Me</h1></div><div class="prose"><p>I’m Kaleb Wade, a university student with a soft spot for maths and, somewhat against the odds, no free time at all — writing has stayed my hobby anyway. It started in high school, after a dream I couldn’t stop thinking about. I told my best friend about it the next morning, and somewhere in the retelling I realised it would make a good story, so I started writing it down.</p><p>I don’t get to write as often as I’d like, but I hope whoever finds their way here enjoys it. The site itself took a long time to build and get working properly — my university courses ended up being more useful for that than I expected. Most of the book still starts life as notes on my phone before I move it over to Word to edit properly.</p><p><strong>A note on AI:</strong> I don’t use AI to write my stories. None of Eyes of Heaven is AI-generated — every word is mine.</p></div><div class="about-art-section"><h2 class="about-art-heading">Sketches &amp; Process Art</h2><p class="about-art-sub">All pen and paper, before any of it became a cover or an illustration.</p><div class="art-gallery">'+(W.length?W.map(function(e,t){return'<button type="button" class="art-thumb" data-art-index="'+t+'"><img src="'+y(e.src)+'" alt="'+y(e.caption||"sketch")+'" loading="lazy"></button>'}).join(""):'<p class="art-empty">No pieces added yet — add entries to the art-data block in the page source to fill this in.</p>')+'</div></div><div class="reader-copyright">&copy; 2026 Kaleb Wade. All rights reserved. Not for redistribution or reproduction without permission.</div></div></div>',document.querySelector(".reader-shell").scrollTop=0}document.addEventListener("click",function(e){var t=e.target.closest(".art-thumb");t&&function(e){var t=W[e];if(t){H();var n=document.createElement("div");n.className="art-lightbox",n.id="artLightbox",n.innerHTML='<button type="button" class="art-lightbox-close" aria-label="Close">&times;</button><figure><img src="'+y(t.src)+'" alt="'+y(t.caption||"sketch")+'">'+(t.caption?"<figcaption>"+y(t.caption)+"</figcaption>":"")+"</figure>",document.body.appendChild(n),n.addEventListener("click",function(e){(e.target===n||e.target.classList.contains("art-lightbox-close"))&&H()})}}(+t.getAttribute("data-art-index"))}),document.addEventListener("keydown",function(e){"Escape"===e.key&&H()});var R=JSON.parse(document.getElementById("stories-data").textContent),W=JSON.parse(document.getElementById("art-data").textContent);function j(){m(),t.className="theme-stories";var e=R.slice().sort(function(e,t){return e.id-t.id}).map(function(e){return'<a class="chapter-card" href="#/stories/read/'+e.id+'"><div class="chapter-card-left"><div class="chapter-eyebrow">SHORT STORY</div><div class="chapter-name">'+y(e.title)+'</div></div><div class="chapter-tag">'+y(e.tag||"")+"</div></a>"}).join("");t.innerHTML='<div class="shell"><aside class="side"><a class="back-btn" href="#/" title="Back to Eyes of Heaven">'+x+'</a><div class="cover"><div class="cover-mark">&#10022;</div></div><h1 class="book-title">Other Stories</h1><p class="book-byline">By: Kaleb Wade</p><div class="synopsis-box"><p>Standalone pieces that live outside the main book &mdash; different worlds, different rules.</p></div><a class="stories-link" href="#/">&larr; Back to Eyes of Heaven</a></aside><section class="main-panel"><div class="list-scroll" style="padding-top:28px;">'+(e||'<div class="empty-state">No short stories posted yet &mdash; check back soon.</div>')+"</div></section></div>"}function U(){var n,o,r=location.hash||"#/",i=r.match(/^#\/read\/(.+)$/),s=r.match(/^#\/stories\/read\/(.+)$/);"#/about"!==r?(t.className="",s?(n=s[1],(o=R.slice().sort(function(e,t){return e.id-t.id}).find(function(e){return String(e.id)===String(n)}))?(t.className="theme-stories",o.audio?b(o.audio):m(),t.innerHTML='<div class="reader-shell"><div class="reader-inner"><div class="reader-bar"><a class="nav-btn" href="#/stories">All Stories</a><span class="spacer"></span>'+(o.audio?'<button class="sound-btn'+(a?" on":"")+'" id="storySoundToggle" title="Toggle ambient sound">'+(a?T:B)+"</button>":"")+'</div><div class="chapter-head"><div class="vol">STANDALONE</div><h1>'+y(o.title)+'</h1></div><div class="prose">'+w(o.content)+'</div><div class="reader-bar bottom"><a class="nav-btn" href="#/stories">&larr; All Stories</a><span class="spacer"></span></div><div class="reader-copyright">&copy; 2026 Kaleb Wade. All rights reserved. Not for redistribution or reproduction without permission.</div></div></div>',document.querySelector(".reader-shell").scrollTop=0,o.audio&&document.getElementById("storySoundToggle").addEventListener("click",function(){f(!a),a?p(o.audio):m();var e=document.getElementById("storySoundToggle");e.classList.toggle("on",a),e.innerHTML=a?T:B})):j()):"#/stories"===r?j():i?function(n){var o=e.slice().sort(function(e,t){return e.number-t.number}),r=o.findIndex(function(e){return String(e.id)===String(n)});if(-1!==r){var i=o[r],s=o[r-1],l=o[r+1],c=o.map(function(e){return'<option value="'+e.id+'"'+(e.id===i.id?" selected":"")+">Ch. "+e.number+" — "+y(e.title)+"</option>"}).join("");t.innerHTML='<div class="reader-shell"><div class="reader-inner">'+d()+'<div class="chapter-head"><div class="vol">'+y((i.volume||"").toUpperCase())+"</div><h1>"+y(i.title)+'</h1></div><div class="prose">'+w(i.content)+"</div>"+d("bottom")+'<div class="reader-copyright">&copy; 2026 Kaleb Wade. All rights reserved. Not for redistribution or reproduction without permission.</div></div></div>',document.querySelector(".reader-shell").scrollTop=0,i.audio?(b(i.audio),document.querySelectorAll("#soundToggle").forEach(function(e){e.addEventListener("click",function(){f(!a),a?p(i.audio):m(),document.querySelectorAll("#soundToggle").forEach(function(e){e.classList.toggle("on",a),e.innerHTML=a?T:B})})})):m()}else C();function d(e){return'<div class="reader-bar '+(e||"")+'"><a class="nav-btn" href="#/">Index</a>'+(s?'<a class="nav-btn" href="#/read/'+s.id+'">&larr; Prev</a>':'<button class="nav-btn" disabled>&larr; Prev</button>')+"<select onchange=\"location.hash='#/read/'+this.value\">"+c+"</select>"+(l?'<a class="nav-btn" href="#/read/'+l.id+'">Next &rarr;</a>':'<button class="nav-btn" disabled>Next &rarr;</button>')+'<span class="spacer"></span>'+(i.audio?'<button class="sound-btn'+(a?" on":"")+'" id="soundToggle" title="Toggle ambient sound">'+(a?T:B)+"</button>":"")+"</div>"}}(i[1]):C()):O()}window.addEventListener("hashchange",U),U()}();
 </script>
 
 
